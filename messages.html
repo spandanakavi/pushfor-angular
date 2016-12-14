@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PushFor</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-select.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/icomoon.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="images/logo.png" alt="PushFor"/></a>
+          <a href="#" class="menutoggle" data-toggle="collapse" id="menu-toggle-2"><span class="icon-menu"></span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="headerheadingtext">Messages</div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="headericons"><a href="#" class="notify"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="notify-indicator"></span></a></li>
+            <li class="headericons"><a href="#"><span class="icon-bbble-speech"></span></a></li>
+            <li><a href="#" class="profile"><img src="images/avatar.png" alt="Profile"/></a></li>
+            <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" id="menu">
+ 
+                <li>
+                    <a href="/pushFor-ui/"><span class="icon-grid"></span> Design</a>
+                       <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="#"><span class="icon-user"></span> Users</a>
+                    <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
+                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
+ 
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="/pushFor-ui/groups.html"><span class="icon-users-group"></span>Groups</a>
+                </li>
+                <li>
+                    <a href="#"><span class="icon-folder"></span>Library</a>
+                </li>
+                <li class="active">
+                    <a href="/pushFor-ui/messages.html"><span class="icon-message"></span>Messages</a>
+                </li>
+                <li>
+                    <a href="#"><span class="icon-bar-chart"></span>Analytics</a>
+                </li>
+            </ul>
+        </div><!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            
+            <div class="configuration-panel searchpanel">
+            <div class="row">
+              <div class="col-md-3">
+                <form>
+                <div>
+                  <div class="searchwrap">
+                    <span class="icon-search"></span>
+                    <input type="text" class="form-control" placeholder="Search Messages" />
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+               
+            </div>
+            <div class="contentarea clearfix" id="contentareaContainer">
+              <div class="messagecontent-main">
+                <div class="messagecontent-inner messagecontent-received">
+                  <div class="messagecontent-body">
+                    <h2>Joanna Obstawska</h2>
+                    <p class="messagecontent">test</p>
+                  </div>
+                  <div class="messagecontent-footer">
+                    <div class="messagetime"><span class="icon-clock"></span> 14 days left</div>
+                  </div>
+                  <div class="message-stripline">
+                    <img src="images/msgblueright.png">
+                  </div>
+                  <div class="message-avatar">
+                    <img src="images/messageavatar2.png">
+                  </div>
+                </div>
+                <div class="messagecontent-inner messagecontent-sent messagestat_time">
+                  <div class="messagecontent-body">
+                    <h2>Crispin</h2>
+                    <p class="messagecontent">&lt;no subject&gt;</p>
+                  </div>
+                  <div class="messagecontent-footer">
+                    <div class="messagetime"><span class="icon-clock"></span> 13 days left</div>
+                  </div>
+                  <div class="message-stripline">
+                    <img src="images/msggreyleft.png">
+                  </div>
+                  <div class="message-avatar">
+                    <img src="images/messageavatar1.png">
+                  </div>
+                  <div class="messagestatus"><span class="icon-history"></span></div>
+                </div>
+                <div class="messagecontent-inner messagecontent-sent messagestat_notseen">
+                  <div class="messagecontent-body">
+                    <h2>Crispin</h2>
+                    <p class="messagecontent">IMG_8646.PNG</p>
+                  </div>
+                  <div class="messagecontent-footer">
+                    <div class="messagetime"></div>
+                  </div>
+                  <div class="message-stripline">
+                    <img src="images/msgorangeleft.png">
+                  </div>
+                  <div class="message-avatar">
+                    <img src="images/messageavatar1.png">
+                  </div>
+                  <div class="messagestatus"><span class="icon-notview"></span></div>
+                </div>
+                <div class="messagecontent-inner messagecontent-received">
+                  <div class="messagecontent-body">
+                    <h2>Joanna Obstawska</h2>
+                    <p class="messagecontent">test</p>
+                  </div>
+                  <div class="messagecontent-footer">
+                    <div class="messagetime"><span class="icon-clock"></span> 14 days left</div>
+                  </div>
+                  <div class="message-stripline">
+                    <img src="images/msgblueright.png">
+                  </div>
+                  <div class="message-avatar">
+                    <img src="images/messageavatar2.png">
+                  </div>
+                </div>
+                <div class="messagecontent-inner messagecontent-sent messagestat_time">
+                  <div class="messagecontent-body">
+                    <h2>Crispin</h2>
+                    <p class="messagecontent">&lt;no subject&gt;</p>
+                  </div>
+                  <div class="messagecontent-footer">
+                    <div class="messagetime"><span class="icon-clock"></span> 13 days left</div>
+                  </div>
+                  <div class="message-stripline">
+                    <img src="images/msggreyleft.png">
+                  </div>
+                  <div class="message-avatar">
+                    <img src="images/messageavatar1.png">
+                  </div>
+                  <div class="messagestatus"><span class="icon-history"></span></div>
+                </div>
+                <div class="messagecontent-inner messagecontent-sent messagestat_notseen">
+                  <div class="messagecontent-body">
+                    <h2>Crispin</h2>
+                    <p class="messagecontent">IMG_8646.PNG</p>
+                  </div>
+                  <div class="messagecontent-footer">
+                    <div class="messagetime"></div>
+                  </div>
+                  <div class="message-stripline">
+                    <img src="images/msgorangeleft.png">
+                  </div>
+                  <div class="message-avatar">
+                    <img src="images/messageavatar1.png">
+                  </div>
+                  <div class="messagestatus"><span class="icon-notview"></span></div>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <div id="myModal" class="modal fade modal-dark" role="dialog">
+  <div class="modal-dialog modal-medium-size">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Apply Changes?</h4>
+      </div>
+      <div class="modal-body">
+        <p>This will update the app and be visible to all users.</p>
+        <div class="text-center modalbuttonholder">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

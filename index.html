@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="firstModule">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PushFor</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-select.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="css/common.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.js"></script>
-  </script>
-  <script src="bower_components/ng-file-upload/ng-file-upload-shim.js"></script>
-  <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
-  <script src="bower_components/ng-file-upload/upload.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/common.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,89 +30,69 @@
       }
     </style>
   </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="images/logo.png" alt="PushFor"/></a>
-          <a href="#" class="menutoggle" data-toggle="collapse" id="menu-toggle-2"><span class="icon-menu"></span></a>
-        </div>
+  <body ng-controller="classCtrl">
+      <nav class="navbar navbar-default">
+        <div class="">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ng-class="{'logotoggled': navBarActive}" href="#"><img src="images/logo.png" alt="PushFor"/></a>
+            <a href="#" ng-click="activeButton()" class="menutoggle" id="menu-toggle-2" ><span class="icon-menu"></span></a>
+          </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <div class="headerheadingtext">App Design</div>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <form class="navbar-form">
-                <div class="header-search">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="headerheadingtext">App Design</div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <form class="navbar-form">
+                  <div class="header-search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </div>
-              </form>
-            </li>
-            <li class="headericons"><a href="#" class="notify"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="notify-indicator"></span></a></li>
-            <li class="headericons"><a href="#"><span class="icon-bbble-speech"></span></a></li>
-            <li><a href="#" class="profile"><img src="images/avatar.png" alt="Profile"/></a></li>
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li> -->
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav" id="menu">
- 
-                <li class="active">
-                    <a href="#"><span class="icon-grid"></span> Design</a>
-                       <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                        <li><a href="#">link1</a></li>
-                        <li><a href="#">link2</a></li>
-                    </ul> -->
-                </li>
-                <li>
-                    <a href="#"><span class="icon-user"></span> Users</a>
-                    <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
-                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
- 
-                    </ul> -->
-                </li>
-                <li>
-                    <a href="#"><span class="icon-users-group"></span>Groups</a>
-                </li>
-                <li>
-                    <a href="#"><span class="icon-folder"></span>Library</a>
-                </li>
-                <li>
-                    <a href="#"><span class="icon-message"></span>Messages</a>
-                </li>
-                <li>
-                    <a href="#"><span class="icon-bar-chart"></span>Analytics</a>
-                </li>
+                </form>
+              </li>
+              <li class="headericons"><a href="#" class="notify"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="notify-indicator"></span></a></li>
+              <li class="headericons"><a href="#"><span class="icon-bbble-speech"></span></a></li>
+              <li><a href="#" class="profile"><img src="images/avatar.png" alt="Profile"/></a></li>
             </ul>
-        </div><!-- /#sidebar-wrapper -->
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div id="wrapper" ng-class="{'toggled-2': navBarActive}">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" >
+              <ul class="sidebar-nav" id="menu">
+                  <li class="active">
+                      <a href="/pushFor-ui/"><span class="icon-grid"></span> Design</a>
+                  </li>
+                  <li>
+                      <a href="#"><span class="icon-user"></span> Users</a>
+                  </li>
+                  <li>
+                      <a href="/pushFor-ui/groups.html"><span class="icon-users-group"></span> Groups</a>
+                  </li>
+                  <li>
+                      <a href="#"><span class="icon-folder"></span> Library</a>
+                  </li>
+                  <li>
+                      <a href="/pushFor-ui/messages.html"><span class="icon-message"></span> Messages</a>
+                  </li>
+                  <li>
+                      <a href="#"><span class="icon-bar-chart"></span> Analytics</a>
+                  </li>
+              </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="welcome-notify">Welcome to Pushfor, Team [Team Name]! To get started choose a configuration for your app and upload your company logo<a href="javascript:void(0)" class="welcome-close"><span class="icon-close"></span></a></div>
             <div class="configuration-panel">
                <form class="form-inline">
                 <div class="form-group">
@@ -128,105 +104,107 @@
                 </div>
               </form>
             </div>
-            <div class="contentarea clearfix" id="contentareaContainer">
-            <div class="deviceviewer-main">
-              <div class="deviceviewer">
-                <img src="images/phone.png" class="device" />
-                <div class="devicecontent darktheme">
-                <div class="floatingdrop">
-                  <a href="javascript:void(0)" class="floatingdrop-action"><span class="icon-plus"></span></a>
-                  <ul class="floatingdrop-menu" style="display: none">
-                    <li><a href="javascript:void(0)">Upload Content</a></li>
-                    <li><a href="javascript:void(0)">Add from Library</a></li>
-                    <li><a href="javascript:void(0)">Create Folder</a></li>
-                  </ul>
-                </div>
-                <div class="floatingdropoverlay" style="display: none"></div>
-                <img src="images/device/devicetop.png" class="devicetop" />
-                  <div class="deviceheader clearfix">
 
-                
-                    <ul>
-                      <li class="text-left"><a href="#"><span class="icon-menu"></span></a></li>
-                      <li class="text-center"><img src="images/device/devicelogo.png" /></li>
-                      <li class="text-right"><a href="#"><span class="icon-search"></span></a></li>
+
+            <div class="contentarea clearfix contentareaflex" id="contentareaContainer">
+              <div class="deviceviewer-main">
+                <div class="deviceviewer">
+                  <img src="images/phone.png" class="device" />
+                  <div class="devicecontent darktheme">
+                  <div class="floatingdrop">
+                    <a href="javascript:void(0)" class="floatingdrop-action"><span class="icon-plus"></span></a>
+                    <ul class="floatingdrop-menu" style="display: none">
+                      <li><a href="javascript:void(0)">Upload Content</a></li>
+                      <li><a href="javascript:void(0)">Add from Library</a></li>
+                      <li><a href="javascript:void(0)">Create Folder</a></li>
                     </ul>
                   </div>
-                    <img src="images/device/image.png" class="mockimage" style="display: none" />
-                  <div class="deviceinnercontent">
-
-                    <div class="devicerow">
-                      <div class="devicecol-full">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
-                        </div>
-                      </div>
+                  <div class="floatingdropoverlay" style="display: none"></div>
+                  <img src="images/device/devicetop.png" class="devicetop" />
+                    <div class="deviceheader clearfix">
+                      <ul>
+                        <li class="text-left"><a href="#"><span class="icon-menu"></span></a></li>
+                        <li class="text-center"><img src="images/device/devicelogo.png" /></li>
+                        <li class="text-right"><a href="#"><span class="icon-search"></span></a></li>
+                      </ul>
                     </div>
+                      <img src="images/device/image.png" class="mockimage" style="display: none" />
+                    <div class="deviceinnercontent">
 
-                    <div class="devicerow">
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
+                      <div class="devicerow">
+                        <div class="devicecol-full">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
                         </div>
                       </div>
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="lime"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class="devicerow">
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="teal"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
+                      <div class="devicerow">
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
+                        </div>
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="lime"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
                         </div>
                       </div>
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue2"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class="devicerow">
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="green"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
+                      <div class="devicerow">
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="teal"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
+                        </div>
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue2"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
                         </div>
                       </div>
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue3"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="devicerow">
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="green"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
-                        </div>
-                      </div>
-                      <div class="devicecol-half">
-                        <div class="devicewidget">
-                          <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue3"><span class="icon-plus"></span></a></div>
-                          <div class="devicewidgetheading">Add Item</div>
-                        </div>
-                      </div>
-                    </div>
 
+                      <div class="devicerow">
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="green"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
+                        </div>
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue3"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="devicerow">
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="green"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
+                        </div>
+                        <div class="devicecol-half">
+                          <div class="devicewidget">
+                            <div class="devicewidgetbody"><a href="javascript:void(0)" class="blue3"><span class="icon-plus"></span></a></div>
+                            <div class="devicewidgetheading">Add Item</div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+
+
               <div class="rightpanel">
                 <a href="javascript:void(0)" class="rightpanel-toggle" id="rightpanel-toggle"><span></span></a>
                 <ul class="nav-tabs-rightpanel">
@@ -236,51 +214,29 @@
 
                 <div class="tab-content">
                   <div id="globalsettings" class="tab-pane fade in active">
-                  <div class="rightpanel-widget">
-                    <div class="rightpanel-widget-heading">New Item:</div>
-                    <div class="rightpanel-widget-body">
-                      <div class="form-group">
-                        <select class="selectpicker" >
-                          <option>Container</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter Container Name">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rightpanel-widget upload-div" ng-app="fileUpload" ng-controller="MyCtrl">
-                    <div class="rightpanel-widget-heading">Set Background:</div>
-                    <div class="rightpanel-widget-body upload-buttons">
-                      <div class="setbgwidget" id="editArea">
-                      <fieldset>
-                        <div class="up-buttons">
-                          <div ngf-select ngf-drop ng-model="files" ngf-model-invalid="invalidFiles"
-                               ngf-model-options="modelOptionsObj"
-                               ngf-multiple="multiple" ngf-pattern="pattern" ngf-accept="acceptSelect"
-                               ng-disabled="disabled" ngf-capture="capture"
-                               ngf-drag-over-class="dragOverClassObj"
-                               ngf-validate="validateObj"
-                               ngf-resize="resizeObj"
-                               ngf-resize-if="resizeIfFn($file, $width, $height)"
-                               ngf-dimensions="dimensionsFn($file, $width, $height)"
-                               ngf-duration="durationFn($file, $duration)"
-                               ngf-keep="keepDistinct ? 'distinct' : keep"
-                               ngf-fix-orientation="orientation"
-                               ngf-max-files="maxFiles"
-                               ngf-ignore-invalid="ignoreInvalid"
-                               ngf-run-all-validations="runAllValidations"
-                               ngf-allow-dir="allowDir" class="drop-box" ngf-drop-available="dropAvailable">
-                            <span ng-show="dropAvailable"><div class="preview"><img ngf-src="!files[0].$error && files[0]"></div></span>
-                            <a href="javascript:void(0)" class="addlogo"><span class="icon-plus"></span></a>
-                          </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">New Item:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="form-group">
+                          <select class="selectpicker" >
+                            <option>Container</option>
+                          </select>
                         </div>
-                      </fieldset>
-                        
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Enter Container Name">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">Set Background:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="setbgwidget">
+                          <img src="images/addimage.png">
+                          <a href="javascript:void(0)" class="addlogo"><span class="icon-plus"></span></a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                   <div id="contenttiles" class="tab-pane fade">
                     <div class="rightpanel-widget">
                       <div class="rightpanel-widget-heading">Set Logo::</div>
@@ -355,48 +311,72 @@
                         </div>
                         </div>
                       </div>
-                        
-                        
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                <div class="rightpanel-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Save</button>
+                <div ng-controller="ModalDemoCtrl as $ctrl" class="rightpanel-footer">
+                  <button type="button" class="btn btn-primary" ng-click="$ctrl.open('medium-size')">Save</button>
                 </div>
               </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-    </div>
+      </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <div id="myModal" class="modal fade modal-dark" role="dialog">
-  <div class="modal-dialog modal-medium-size">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Apply Changes?</h4>
-      </div>
-      <div class="modal-body">
-        <p>This will update the app and be visible to all users.</p>
-        <div class="text-center modalbuttonholder">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+   <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Apply Changes?</h4>
         </div>
-      </div>
-    </div>
+        <div class="modal-body" id="modal-body">
+            <p>This will update the app and be visible to all users.</p>
+            <div class="text-center modalbuttonholder">
+              <button type="button" class="btn btn-secondary" ng-click="$ctrl.cancel()">Cancel</button>
+              <button type="button" class="btn btn-primary" ng-click="$ctrl.ok()">Ok</button>
+            </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="stackedModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body-{{name}}">
+            Having multiple modals open at once is probably bad UX but it's technically possible.
+        </div>
+    </script>
 
-  </div>
-</div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-   
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.3.0.js"></script>
+    <script src="example.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/ng-file-upload/upload.js"></script>
+
+
+    <script>
+      var classApp = angular.module('firstModule', ['ui.bootstrap.demo']);
+
+      classApp.controller('classCtrl', function ($scope) {
+        $scope.isActive = false;
+        $scope.navBar = false;
+        $scope.activeButton = function() {
+          $scope.navBarActive = !$scope.navBarActive;
+        }  
+      });
+
+      classApp.controller('dropCtrl', function($scope) {
+          $scope.names = ["Content", "Messaging"];
+      });
+    </script>
   </body>
 </html>

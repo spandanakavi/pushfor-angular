@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>PushFor</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<link rel="stylesheet" href="bower_components/eeh-navigation/dist/eeh-navigation.css"/>
+<script src="bower_components/eeh-navigation/dist/eeh-navigation.js"></script>
+<script src="bower_components/eeh-navigation/dist/eeh-navigation.tpl.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.js"></script>
+  </script>
+  </head>
+  <body>
+
+<div ng-app="myApp">
+  <div ng-controller="MainController">
+    <eeh-navigation-sidebar menu-name="'myMenu'"></eeh-navigation-sidebar>
+  </div>
+</div>
+
+<script>
+
+(function() {
+  'use strict';
+
+  var app = angular.module('myApp', [
+    'eehNavigation',
+    'ui.bootstrap',
+    'ui.router'
+  ]);
+
+  app.config(['eehNavigationProvider', function(eehNavigationProvider) {
+    eehNavigationProvider
+      .menuItem('myMenu.home', {
+        text: 'Home',
+        iconClass: 'glyphicon-home',
+        weight: -10,
+        href: '#'
+      })
+      .menuItem('myMenu.users', {
+        text: 'Users',
+        iconClass: 'glyphicon-user',
+        weight: -8,
+        href: '#'
+      })
+      .menuItem('myMenu.settings', {
+        text: 'Settings',
+        iconClass: 'glyphicon-cog',
+        weight: -6,
+        href: '#'
+      });
+  }]);
+  
+  app.controller('MainController', function ($scope) {
+    $scope.searchCallback = function (query) {
+      $scope.searchTerm = query;
+    }
+  });
+})();
+
+
+</script>
+  </body>
+</html>

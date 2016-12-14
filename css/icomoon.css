@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?ikc6zd');
-  src:  url('../fonts/icomoon.eot?ikc6zd#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?ikc6zd') format('truetype'),
-    url('../fonts/icomoon.woff?ikc6zd') format('woff'),
-    url('../fonts/icomoon.svg?ikc6zd#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?hiy5ol');
+  src:  url('../fonts/icomoon.eot?hiy5ol#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?hiy5ol') format('truetype'),
+    url('../fonts/icomoon.woff?hiy5ol') format('woff'),
+    url('../fonts/icomoon.svg?hiy5ol#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-clock:before {
+  content: "\e916";
+}
+.icon-history:before {
+  content: "\e917";
+}
+.icon-notview:before {
+  content: "\e918";
+}
+.icon-angleright:before {
+  content: "\e915";
+}
+.icon-adduser:before {
+  content: "\e912";
+}
+.icon-edit:before {
+  content: "\e913";
+}
+.icon-notification:before {
+  content: "\e914";
+}
+.icon-adobe:before {
+  content: "\e911";
+}
 .icon-back-circle:before {
   content: "\e900";
 }

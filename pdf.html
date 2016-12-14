@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PushFor</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-select.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/icomoon.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="images/logo.png" alt="PushFor"/></a>
+          <a href="#" class="menutoggle" data-toggle="collapse" id="menu-toggle-2"><span class="icon-menu"></span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="headerheadingtext">App Design</div>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-form">
+                <div class="header-search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </form>
+            </li>
+            <li class="headericons"><a href="#" class="notify"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="notify-indicator"></span></a></li>
+            <li class="headericons"><a href="#"><span class="icon-bbble-speech"></span></a></li>
+            <li><a href="#" class="profile"><img src="images/avatar.png" alt="Profile"/></a></li>
+            <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" id="menu">
+ 
+                <li class="active">
+                    <a href="#"><span class="icon-grid"></span> Design</a>
+                       <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="#"><span class="icon-user"></span> Users</a>
+                    <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
+                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
+ 
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="#"><span class="icon-users-group"></span>Groups</a>
+                </li>
+                <li>
+                    <a href="#"><span class="icon-folder"></span>Library</a>
+                </li>
+                <li>
+                    <a href="#"><span class="icon-message"></span>Messages</a>
+                </li>
+                <li>
+                    <a href="#"><span class="icon-bar-chart"></span>Analytics</a>
+                </li>
+            </ul>
+        </div><!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="welcome-notify">Welcome to Pushfor, Team [Team Name]! To get started choose a configuration for your app and upload your company logo<a href="javascript:void(0)" class="welcome-close"><span class="icon-close"></span></a></div>
+            <div class="configuration-panel">
+               <form class="form-inline">
+                <div class="form-group">
+                  <label for="email">Configuration:</label>
+                  <select class="selectpicker" >
+                    <option>Content</option>
+                    <option>Design</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="contentarea clearfix contentareaflex" id="contentareaContainer">
+            <div class="deviceviewer-main">
+              <div class="deviceviewer">
+                <img src="images/phone.png" class="device" />
+                <div class="devicecontent darktheme">
+                <div class="floatingdrop">
+                  <a href="javascript:void(0)" class="floatingdrop-action"><span class="icon-plus"></span></a>
+                  <ul class="floatingdrop-menu" style="display: none">
+                    <li><a href="javascript:void(0)">Upload Content</a></li>
+                    <li><a href="javascript:void(0)">Add from Library</a></li>
+                    <li><a href="javascript:void(0)">Create Folder</a></li>
+                  </ul>
+                </div>
+                <div class="floatingdropoverlay" style="display: none"></div>
+                <img src="images/device/devicetop.png" class="devicetop" />
+                  <div class="deviceheader clearfix">
+
+                
+                    <ul>
+                      <li class="text-left"><a href="#" class="backcircle"><span class="icon-back-circle"></span></a></li>
+                      <li class="text-center"><span class="deviceheader-title">Vote</span></li>
+                    </ul>
+                  </div>
+                    <img src="images/device/image.png" class="mockimage" style="display: none" />
+                  <div class="deviceinnercontent">
+
+                    
+
+                    <div class="devicerow">
+                      <div class="devicecol-half">
+                        <div class="devicewidget">
+                          <div class="devicedocholder">
+                            <img src="images/device/pdf.png">
+                            <div class="devicedocdetails">UK Expression of support(partners).pdf<span class="icon-adobe"></span></div>
+                            <div class="pdfstatus"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="devicecol-half">
+                        <div class="devicewidget">
+                          <div class="devicedocholder">
+                            <img src="images/device/pdf2.jpg">
+                            <div class="devicedocdetails">UK Notice of meeting.pdf<span class="icon-adobe"></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="devicerow">
+                      <div class="devicecol-half">
+                        <div class="devicewidget">
+                          <div class="devicedocholder">
+                            <img src="images/device/pdf.png">
+                            <div class="devicedocdetails">UK Vote Resolution.pdf<span class="icon-adobe"></span></div>
+                            <div class="pdfstatus"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="rightpanel">
+                <a href="javascript:void(0)" class="rightpanel-toggle" id="rightpanel-toggle"><span></span></a>
+                <ul class="nav-tabs-rightpanel">
+                  <li class="active"><a data-toggle="tab" href="#globalsettings">Content Tiles</a></li>
+                  <li><a data-toggle="tab" href="#contenttiles">Global Settings</a></li>
+                </ul>
+
+                <div class="tab-content">
+                  <div id="globalsettings" class="tab-pane fade in active rightpanel-widget-light">
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">Item Details:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="form-group label-inline">
+                          <label class="label-inline-text">Name:</label>
+                          <input type="text" class="form-control" value="UK Expression of support.pdf">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">Choose Theme:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="">
+                          <select class="selectpicker" >
+                            <option>Dark</option>
+                            <option>Light</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">New Item:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="form-group">
+                          <select class="selectpicker" >
+                            <option>Container</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Enter Container Name">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">Set Background:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="setbgwidget">
+                          <img src="images/addimage.png">
+                          <a href="javascript:void(0)" class="addlogo"><span class="icon-plus"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">Options:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="checkbox-wrap">
+                          <label>Screenshot protection<input type="checkbox" value="" id="sample1"><label for="sample1"></label></label>
+                        </div>
+                        <div class="checkbox-wrap">
+                          <label>Password protection<input type="checkbox" value="" id="sample2"><label for="sample2"></label></label>
+                        </div>
+                        <div class="checkbox-wrap">
+                          <label>Rating<input type="checkbox" value="" id="sample3"><label for="sample3"></label></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">Group Permissions</div>
+                      <div class="rightpanel-widget-body">
+                      <div class="checkbox-haschild">
+                        <div class="checkbox-wrap">
+                          <label>Screenshot protection<input type="checkbox" value="" id="sample1"><label for="sample1"></label></label>
+                          <span class="checkboxchild-caret"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="checkbox-child">
+                          <div class="checkbox-wrap">
+                          <label>Password protection<input type="checkbox" value="" id="sample2"><label for="sample2"></label></label>
+                        </div>
+                        <div class="checkbox-wrap">
+                          <label>Rating<input type="checkbox" value="" id="sample3"><label for="sample3"></label></label>
+                        </div>
+                        </div>
+                      </div>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div id="contenttiles" class="tab-pane fade">
+                    
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">New Item:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="form-group">
+                          <select class="selectpicker" >
+                            <option>Container</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Enter Container Name">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rightpanel-widget">
+                      <div class="rightpanel-widget-heading">Set Background:</div>
+                      <div class="rightpanel-widget-body">
+                        <div class="setbgwidget">
+                          <img src="images/addimage.png">
+                          <a href="javascript:void(0)" class="addlogo"><span class="icon-plus"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="rightpanel-footer">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Save</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <div id="myModal" class="modal fade modal-dark" role="dialog">
+  <div class="modal-dialog modal-medium-size">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Apply Changes?</h4>
+      </div>
+      <div class="modal-body">
+        <p>This will update the app and be visible to all users.</p>
+        <div class="text-center modalbuttonholder">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

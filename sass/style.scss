@@ -314,6 +314,12 @@ a,a:focus, a:hover{text-decoration: none}
 .configuration-panel {
     background: #fff none repeat scroll 0 0;
     padding: 7px 30px;
+    &.searchpanel{
+    	padding: 7px 44px;
+    	.btn.btn-primary {
+		    margin-top: 2px;
+		}
+    }
     label {
 	    color: #3d526d;
 	    font-size: 16px;
@@ -347,23 +353,28 @@ a,a:focus, a:hover{text-decoration: none}
 .contentarea {
     position: relative;
     // overflow-x: hidden;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    
+    padding: 15px 44px;
+    &.contentareaflex{
+    	display: -webkit-box;
+	    display: -moz-box;
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    padding: 0;
+    }
     .rightpanel {
 	    background: #31313A;
 	    // height: 100%;
 	    position: relative;
 	    right: 0;
 	    top: 0;
-	    width: 270px;
+	    width: 320px;
 	    float: right;
 	     padding: 20px 15px 75px;
 	     transition: all .5s;
 	     &.rightpanel-toggled{
-	     	margin-right: -270px;
+	     	margin-right: -320px;
 	     	.rightpanel-toggle{
 	     		> span{
 	     			&:after{
@@ -400,6 +411,35 @@ a,a:focus, a:hover{text-decoration: none}
 		    position: absolute;
 		    text-align: right;
 		    width: 100%;
+		}
+	}
+}
+.rightpanel-widget-light{
+	.rightpanel-widget {
+		.rightpanel-widget-body {
+			.btn-group.bootstrap-select{
+				.btn.dropdown-toggle.form-control {
+					background: #FFFFFF none repeat scroll 0 0;
+					color: #333;
+					span{
+						color: #333;
+					}
+				}
+			}
+			.form-control{
+		    	background: #FFFFFF none repeat scroll 0 0;
+			    color: #333;
+		    }
+		    .checkbox-wrap{
+	    	background: #FFFFFF none repeat scroll 0 0;
+		    color: #333;
+		    >label{
+		    	color: #333;
+		    }
+			input[type="checkbox"] + label:before {
+				text-shadow: none;
+			}
+	    }
 		}
 	}
 }
@@ -450,6 +490,18 @@ a,a:focus, a:hover{text-decoration: none}
 	    	&:last-child{
 	    		margin-bottom: 0;
 	    	}
+	    	&.label-inline {
+			    padding-left: 50px;
+			    position: relative;
+			    >label.label-inline-text {
+				    color: #fff;
+				    font-size: 12px;
+				    left: 0;
+				    position: absolute;
+				    text-transform: uppercase;
+				    top: 6px;
+				}
+			}
 	    }
 	    .checkbox-wrap{
 	    	background: #4d494e none repeat scroll 0 0;
@@ -533,9 +585,17 @@ a,a:focus, a:hover{text-decoration: none}
     background: #00b1f1 none repeat scroll 0 0;
     font-size: 12px;
     font-weight: 600;
-    padding: 7px 36px;
+    padding: 7px 15px;
     text-transform: uppercase;
     border-color:transparent;
+    [class^="icon-"], [class*=" icon-"]{
+    	display: inline-block;
+	    font-size: 20px;
+	    margin-right: 5px;
+	    margin-top: -6px;
+	    position: relative;
+	    top: 4px;
+    }
 }
 .btn.btn-secondary {
     background: #9B9B9B	 none repeat scroll 0 0;
@@ -609,6 +669,15 @@ a,a:focus, a:hover{text-decoration: none}
     	li {
 			    float: left;
 			    width: 33.33%;
+			    .deviceheader-title {
+				    color: rgba(255, 255, 255, 0.9);
+				    font-weight: 600;
+				}
+				.icon-back-circle {
+				    display: block;
+				    font-size: 18px;
+				    color: rgba(255, 255, 255, 0.8);
+				}
 			}
     }
     .mockimage {
@@ -657,7 +726,9 @@ a,a:focus, a:hover{text-decoration: none}
 	    .devicewidget{
 	    	margin-bottom: 5px;
 	    	&.devicewidget-selected{
-	    		border: 4px solid #00B1F1;
+	    		outline: 4px solid #00b1f1;
+			    position: relative;
+			    z-index: 1;
 	    	}
 	    }
 	    .devicewidgetheading {
@@ -848,4 +919,241 @@ ul{
 		    cursor: pointer;
 		}
 	}
+}
+
+.devicedocholder{
+	position: relative;
+	background: #fff;
+	max-height: 175px;
+	img{
+		width: 100%;
+	}
+	.devicedocdetails {
+	    background: rgba(0, 0, 0, 0.55) none repeat scroll 0 0;
+	    bottom: 0;
+	    color: #fff;
+	    font-size: 10px;
+	    min-height: 46px;
+	    padding: 8px 22px 8px 8px;
+	    position: absolute;
+	    .icon-adobe {
+		    font-size: 12px;
+		    position: absolute;
+		    right: 3px;
+		    top: 50%;
+		    transform: translateY(-50%);
+		}
+	}
+	.pdfstatus {
+	    background: #7fbf37 none repeat scroll 0 0;
+	    border-radius: 50%;
+	    display: inline-block;
+	    height: 12px;
+	    position: absolute;
+	    right: 5px;
+	    top: 5px;
+	    width: 12px;
+	}
+}
+.searchwrap {
+    position: relative;
+    margin: 3px 0;
+    .icon-search {
+	    left: 10px;
+	    position: absolute;
+	    top: 8px;
+	    color: #646464;
+	}
+	.form-control{
+		border-color: #4A4A4A;
+		box-shadow: none;
+		border-radius: 0;
+		padding-left: 32px;
+		height: 30px;
+	}
+}
+.groupscontent-main {
+	// max-height: 600px;
+	.groupscontent {
+	    color: #fff;
+	    padding: 26px 158px 20px 135px;
+	    position: relative;
+	    border: 1px solid #979797;
+	    background: url(../images/groupsbg.jpg) no-repeat left bottom #2e2e2e;
+	    margin-bottom: 5px;
+	    h2 {
+		    font-size: 18px;
+		    font-weight: 500;
+		    margin: 0 0 10px;
+		}
+		> p.memberscontent-inner {
+		    font-size: 16px;
+		    margin: 0;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		}
+		.memberscount {
+		    font-size: 16px;
+		    margin-top: 14px;
+		}
+		.groupscontent-action {
+		    bottom: 54px;
+		    color: #fff;
+		    font-size: 24px;
+		    font-weight: 300;
+		    line-height: 24px;
+		    position: absolute;
+		    right: 27px;
+		    width: 18px;
+		}
+		&:after {
+		    background: #404040 none repeat scroll 0 0;
+		    bottom: 42px;
+		    content: "";
+		    display: inline-block;
+		    height: 2px;
+		    left: 132px;
+		    position: absolute;
+		    width: calc(100% - 132px);
+		}
+	}
+}
+.messagecontent-main {
+    margin: 0 auto;
+    max-width: 895px;
+}
+.messagecontent-inner{
+	min-height: 135px;
+	position: relative;
+	padding-bottom: 30px;
+	margin-bottom: 10px;
+	.messagecontent-body{
+		padding: 25px 25px 15px 250px;
+		h2{
+			color: #fff;
+		    font-size: 28px;
+		    font-weight: 600;
+		    margin: 0 0 11px;
+		}
+		.messagecontent {
+		    color: #fff;
+		    font-size: 14px;
+		    font-weight: 600;
+		    margin-bottom: 0;
+		}
+	}	
+	.messagecontent-footer {
+	    border-top: 3px solid #67c8f6;
+	    padding: 3px 15px;
+	    position: absolute;
+	    width: 100%;
+	    bottom:0;
+	    left:0;
+	    min-height: 28px;
+	}
+	.message-stripline{
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		max-width: 180px;
+		height: 100%;
+		img{
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.message-avatar {
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    z-index: 1;
+	    img{
+	    	height: 100%;
+	    	width: 100%;
+	    }
+	}
+	.messagestatus {
+	    border-color: transparent transparent #40B2E6 #40B2E6;
+	    border-style: solid;
+	    border-width: 30px;
+	    bottom: 0;
+	    left: 0;
+	    position: absolute;
+	    z-index: 4;
+	    >span{
+	    	position: absolute;
+	    	color: #fff;
+	    }
+	    .icon-history {
+		    font-size: 26px;
+		    left: -26px;
+		}
+		.icon-notview {
+		    font-size: 19px;
+		    left: -22px;
+		    top: 6px;
+		}
+	}
+	&.messagecontent-received{
+		background: #13344A;
+		.messagecontent-body{
+			padding: 25px 250px 15px 25px;
+		}
+		.messagecontent-footer {
+		    color: #fff;
+	    	background: #0B2434;
+		}
+		.message-stripline{
+			right: 70px;
+		}
+		.message-avatar {
+		    right: 0;
+		}
+	}
+	&.messagecontent-sent{
+		&.messagestat_time{
+			background: #3D3D3D;
+			.messagecontent-footer {
+		    	background: #2B2B2B;
+	    	}
+	    	.message-avatar{
+	    		img{
+	    			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    				filter: grayscale(100%);
+	    		}
+	    	}
+		}
+		&.messagestat_notseen{
+			background: #4C2C06;
+			.messagecontent-footer {
+		    	background: #331D03;
+	    	}
+	    	.message-avatar{
+	    		img{	    			
+	    			-webkit-filter: grayscale(100%) sepia(67%) hue-rotate(355deg) saturate(233.3%) brightness(72%); /* Safari */
+   					filter: grayscale(100%) sepia(67%) hue-rotate(355deg) saturate(233.3%) brightness(72%);
+	    		}
+	    	}
+		}
+		.messagecontent-body{
+			text-align: right;
+		}
+		.messagecontent-footer {
+		    color: #67c8f6;
+	    	text-align: right;
+			.icon-clock{
+				float: right;
+				margin-left: 5px;
+    			margin-top: 4px;
+			}
+		}
+		.message-stripline{
+			left: 70px;
+		}
+		.message-avatar {
+		    left: 0;
+		}
+	}
+
 }

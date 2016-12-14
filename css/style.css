@@ -277,6 +277,10 @@ a, a:focus, a:hover {
 .configuration-panel {
   background: #fff none repeat scroll 0 0;
   padding: 7px 30px; }
+  .configuration-panel.searchpanel {
+    padding: 7px 44px; }
+    .configuration-panel.searchpanel .btn.btn-primary {
+      margin-top: 2px; }
   .configuration-panel label {
     color: #3d526d;
     font-size: 16px;
@@ -303,22 +307,25 @@ a, a:focus, a:hover {
 
 .contentarea {
   position: relative;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex; }
+  padding: 15px 44px; }
+  .contentarea.contentareaflex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 0; }
   .contentarea .rightpanel {
     background: #31313A;
     position: relative;
     right: 0;
     top: 0;
-    width: 270px;
+    width: 320px;
     float: right;
     padding: 20px 15px 75px;
     transition: all .5s; }
     .contentarea .rightpanel.rightpanel-toggled {
-      margin-right: -270px; }
+      margin-right: -320px; }
       .contentarea .rightpanel.rightpanel-toggled .rightpanel-toggle > span:after {
         content: "\f104"; }
     .contentarea .rightpanel .rightpanel-toggle {
@@ -346,6 +353,22 @@ a, a:focus, a:hover {
       position: absolute;
       text-align: right;
       width: 100%; }
+
+.rightpanel-widget-light .rightpanel-widget .rightpanel-widget-body .btn-group.bootstrap-select .btn.dropdown-toggle.form-control {
+  background: #FFFFFF none repeat scroll 0 0;
+  color: #333; }
+  .rightpanel-widget-light .rightpanel-widget .rightpanel-widget-body .btn-group.bootstrap-select .btn.dropdown-toggle.form-control span {
+    color: #333; }
+.rightpanel-widget-light .rightpanel-widget .rightpanel-widget-body .form-control {
+  background: #FFFFFF none repeat scroll 0 0;
+  color: #333; }
+.rightpanel-widget-light .rightpanel-widget .rightpanel-widget-body .checkbox-wrap {
+  background: #FFFFFF none repeat scroll 0 0;
+  color: #333; }
+  .rightpanel-widget-light .rightpanel-widget .rightpanel-widget-body .checkbox-wrap > label {
+    color: #333; }
+  .rightpanel-widget-light .rightpanel-widget .rightpanel-widget-body .checkbox-wrap input[type="checkbox"] + label:before {
+    text-shadow: none; }
 
 .rightpanel-widget {
   margin-bottom: 10px; }
@@ -386,6 +409,16 @@ a, a:focus, a:hover {
       font-size: 12px; }
     .rightpanel-widget .rightpanel-widget-body .form-group:last-child {
       margin-bottom: 0; }
+    .rightpanel-widget .rightpanel-widget-body .form-group.label-inline {
+      padding-left: 50px;
+      position: relative; }
+      .rightpanel-widget .rightpanel-widget-body .form-group.label-inline > label.label-inline-text {
+        color: #fff;
+        font-size: 12px;
+        left: 0;
+        position: absolute;
+        text-transform: uppercase;
+        top: 6px; }
     .rightpanel-widget .rightpanel-widget-body .checkbox-wrap {
       background: #4d494e none repeat scroll 0 0;
       border: 1px solid #c0bfc0;
@@ -455,9 +488,16 @@ a, a:focus, a:hover {
   background: #00b1f1 none repeat scroll 0 0;
   font-size: 12px;
   font-weight: 600;
-  padding: 7px 36px;
+  padding: 7px 15px;
   text-transform: uppercase;
   border-color: transparent; }
+  .btn.btn-primary [class^="icon-"], .btn.btn-primary [class*=" icon-"] {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 5px;
+    margin-top: -6px;
+    position: relative;
+    top: 4px; }
 
 .btn.btn-secondary {
   background: #9B9B9B	 none repeat scroll 0 0;
@@ -467,16 +507,16 @@ a, a:focus, a:hover {
   text-transform: uppercase;
   border-color: transparent; }
 
-.modal-dark .modal-header {
+ .modal-header {
   background: #474747 none repeat scroll 0 0;
   color: #fff;
   font-size: 22px;
   text-align: center;
   border: 0;
   border-radius: 4px 4px 0 0; }
-  .modal-dark .modal-header h4 {
+.modal-header h4 {
     font-size: 16px; }
-.modal-dark .modal-body {
+ .modal-body {
   background: #2c2c2c none repeat scroll 0 0;
   color: #e2e3e2;
   font-size: 16px;
@@ -485,9 +525,9 @@ a, a:focus, a:hover {
   text-align: center;
   border: 0;
   border-radius: 0 0 4px 4px; }
-.modal-dark .modalbuttonholder .btn + .btn {
+ .modalbuttonholder .btn + .btn {
   margin-left: 10px; }
-.modal-dark .modalbuttonholder {
+ .modalbuttonholder {
   padding-top: 10px; }
 
 .modal-dialog.modal-medium-size {
@@ -526,6 +566,13 @@ a, a:focus, a:hover {
     .devicecontent .deviceheader li {
       float: left;
       width: 33.33%; }
+      .devicecontent .deviceheader li .deviceheader-title {
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 600; }
+      .devicecontent .deviceheader li .icon-back-circle {
+        display: block;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8); }
   .devicecontent .mockimage {
     width: 100%; }
   .devicecontent.darktheme .deviceheader {
@@ -555,7 +602,9 @@ a, a:focus, a:hover {
     .devicecontent .deviceinnercontent .devicewidget {
       margin-bottom: 5px; }
       .devicecontent .deviceinnercontent .devicewidget.devicewidget-selected {
-        border: 4px solid #00B1F1; }
+        outline: 4px solid #00b1f1;
+        position: relative;
+        z-index: 1; }
     .devicecontent .deviceinnercontent .devicewidgetheading {
       background: #585757 none repeat scroll 0 0;
       color: #fff;
@@ -713,5 +762,194 @@ ul {
     position: absolute;
     top: 1px;
     cursor: pointer; }
+
+.devicedocholder {
+  position: relative;
+  background: #fff;
+  max-height: 175px; }
+  .devicedocholder img {
+    width: 100%; }
+  .devicedocholder .devicedocdetails {
+    background: rgba(0, 0, 0, 0.55) none repeat scroll 0 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 10px;
+    min-height: 46px;
+    padding: 8px 22px 8px 8px;
+    position: absolute; }
+    .devicedocholder .devicedocdetails .icon-adobe {
+      font-size: 12px;
+      position: absolute;
+      right: 3px;
+      top: 50%;
+      transform: translateY(-50%); }
+  .devicedocholder .pdfstatus {
+    background: #7fbf37 none repeat scroll 0 0;
+    border-radius: 50%;
+    display: inline-block;
+    height: 12px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 12px; }
+
+.searchwrap {
+  position: relative;
+  margin: 3px 0; }
+  .searchwrap .icon-search {
+    left: 10px;
+    position: absolute;
+    top: 8px;
+    color: #646464; }
+  .searchwrap .form-control {
+    border-color: #4A4A4A;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 32px;
+    height: 30px; }
+
+.groupscontent-main .groupscontent {
+  color: #fff;
+  padding: 26px 158px 20px 135px;
+  position: relative;
+  border: 1px solid #979797;
+  background: url(../images/groupsbg.jpg) no-repeat left bottom #2e2e2e;
+  margin-bottom: 5px; }
+  .groupscontent-main .groupscontent h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 10px; }
+  .groupscontent-main .groupscontent > p.memberscontent-inner {
+    font-size: 16px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .groupscontent-main .groupscontent .memberscount {
+    font-size: 16px;
+    margin-top: 14px; }
+  .groupscontent-main .groupscontent .groupscontent-action {
+    bottom: 54px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+    position: absolute;
+    right: 27px;
+    width: 18px; }
+  .groupscontent-main .groupscontent:after {
+    background: #404040 none repeat scroll 0 0;
+    bottom: 42px;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    left: 132px;
+    position: absolute;
+    width: calc(100% - 132px); }
+
+.messagecontent-main {
+  margin: 0 auto;
+  max-width: 895px; }
+
+.messagecontent-inner {
+  min-height: 135px;
+  position: relative;
+  padding-bottom: 30px;
+  margin-bottom: 10px; }
+  .messagecontent-inner .messagecontent-body {
+    padding: 25px 25px 15px 250px; }
+    .messagecontent-inner .messagecontent-body h2 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0 0 11px; }
+    .messagecontent-inner .messagecontent-body .messagecontent {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 0; }
+  .messagecontent-inner .messagecontent-footer {
+    border-top: 3px solid #67c8f6;
+    padding: 3px 15px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    min-height: 28px; }
+  .messagecontent-inner .message-stripline {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    max-width: 180px;
+    height: 100%; }
+    .messagecontent-inner .message-stripline img {
+      height: 100%;
+      width: 100%; }
+  .messagecontent-inner .message-avatar {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1; }
+    .messagecontent-inner .message-avatar img {
+      height: 100%;
+      width: 100%; }
+  .messagecontent-inner .messagestatus {
+    border-color: transparent transparent #40B2E6 #40B2E6;
+    border-style: solid;
+    border-width: 30px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 4; }
+    .messagecontent-inner .messagestatus > span {
+      position: absolute;
+      color: #fff; }
+    .messagecontent-inner .messagestatus .icon-history {
+      font-size: 26px;
+      left: -26px; }
+    .messagecontent-inner .messagestatus .icon-notview {
+      font-size: 19px;
+      left: -22px;
+      top: 6px; }
+  .messagecontent-inner.messagecontent-received {
+    background: #13344A; }
+    .messagecontent-inner.messagecontent-received .messagecontent-body {
+      padding: 25px 250px 15px 25px; }
+    .messagecontent-inner.messagecontent-received .messagecontent-footer {
+      color: #fff;
+      background: #0B2434; }
+    .messagecontent-inner.messagecontent-received .message-stripline {
+      right: 70px; }
+    .messagecontent-inner.messagecontent-received .message-avatar {
+      right: 0; }
+  .messagecontent-inner.messagecontent-sent.messagestat_time {
+    background: #3D3D3D; }
+    .messagecontent-inner.messagecontent-sent.messagestat_time .messagecontent-footer {
+      background: #2B2B2B; }
+    .messagecontent-inner.messagecontent-sent.messagestat_time .message-avatar img {
+      -webkit-filter: grayscale(100%);
+      /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%); }
+  .messagecontent-inner.messagecontent-sent.messagestat_notseen {
+    background: #4C2C06; }
+    .messagecontent-inner.messagecontent-sent.messagestat_notseen .messagecontent-footer {
+      background: #331D03; }
+    .messagecontent-inner.messagecontent-sent.messagestat_notseen .message-avatar img {
+      -webkit-filter: grayscale(100%) sepia(67%) hue-rotate(355deg) saturate(233.3%) brightness(72%);
+      /* Safari */
+      filter: grayscale(100%) sepia(67%) hue-rotate(355deg) saturate(233.3%) brightness(72%); }
+  .messagecontent-inner.messagecontent-sent .messagecontent-body {
+    text-align: right; }
+  .messagecontent-inner.messagecontent-sent .messagecontent-footer {
+    color: #67c8f6;
+    text-align: right; }
+    .messagecontent-inner.messagecontent-sent .messagecontent-footer .icon-clock {
+      float: right;
+      margin-left: 5px;
+      margin-top: 4px; }
+  .messagecontent-inner.messagecontent-sent .message-stripline {
+    left: 70px; }
+  .messagecontent-inner.messagecontent-sent .message-avatar {
+    left: 0; }
 
 /*# sourceMappingURL=style.css.map */
